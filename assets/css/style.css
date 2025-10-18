@@ -1,8 +1,38 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* bannar sction animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-float {
+    animation: float 3.5s ease-in-out infinite;
+}
+
+.animate-float-delay-1 {
+    animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delay-2 {
+    animation: float 3s ease-in-out infinite;
+}
 
 /* background color */
 /* bg-gradient-to-r from-[#4776E6] to-[#8E54E9] */

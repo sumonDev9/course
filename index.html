@@ -16,10 +16,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <!-- alpine js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
-    <!-- topbar, navbar and banner -->
+    <!-- topbar start here -->
     <div
         class="bg-gradient-to-r from-[#4776E6] to-[#8E54E9] text-white text-lg py-3 px-4   font-medium flex items-center justify-between">
         <!-- Marquee Container -->
@@ -32,7 +34,146 @@
         <!-- Current date & weekday -->
         <p id="currentDate" class="ml-4 whitespace-nowrap"></p>
     </div>
+    <!-- topbar end here -->
 
+    <!-- navbar and banner start here -->
+     <section>
+        <nav x-data="{ open: false }" class="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-xl">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-purple-700"><img src="./assets/image/logo.png" class="w-12 h-12" alt="logo"></a>
+                </div>
+                
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-purple-700 font-medium">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-purple-700 font-medium">About Us</a>
+                    <a href="#" class="text-gray-700 hover:text-purple-700 font-medium">All Courses</a>
+                    <a href="#" class="text-gray-700 hover:text-purple-700 font-medium">Tutorial</a>
+                    <a href="#" class="text-gray-700 hover:text-purple-700 font-medium">Blog</a>
+                    <a href="#" class="text-gray-700 hover:text-purple-700 font-medium">Contact</a>
+                </div>
+                
+                <div class="hidden md:block">
+                      <button id="load-more-btn"  class="inline-flex items-center justify-center w-full md:w-auto pl-8 py-1 cursor-pointer font-semibold text-[#000000] shadow-xl bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300">
+                     Login
+                    <div class="w-7 h-7 bg-gradient-to-r from-[#4776E6] to-[#8E54E9] flex justify-between items-center rounded-full ml-2">
+                        <svg class="w-8 h-8 text-white -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                     </div>
+                    </button>
+                </div>
+                
+                <div class="md:hidden">
+                    <button @click="open = !open" class="text-gray-700 hover:text-purple-700 focus:outline-none">
+                        <span class="sr-only">Open main menu</span>
+                        <svg x-show="!open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display: none;">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="open" 
+             @click.outside="open = false" 
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 transform -translate-y-2"
+             x-transition:enter-end="opacity-100 transform translate-y-0"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 transform translate-y-0"
+             x-transition:leave-end="opacity-0 transform -translate-y-2"
+             class="absolute w-full md:hidden bg-white/70 backdrop-blur-lg shadow-lg border-t border-gray-200/60"
+             style="display: none;">
+            
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">Home</a>
+                <a href="#" class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">About Us</a>
+                <a href="#" class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">All Courses</a>
+                <a href="#" class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">Tutorial</a>
+                <a href="#" class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">Blog</a>
+                <a href="#" class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">Contact</a>
+            </div>
+            <div class="px-4 pb-4">
+                 <a href="#" class="block w-full text-center bg-purple-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-purple-700 transition duration-300">
+                    Login / Sign Up
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="text-center lg:text-left">
+                <span class="text-[#000000] font-semibold text-lg">Don't Just Learn, Build Yourself</span>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#000000] my-4 leading-tight">
+                    Turn Your <span class="text-transparent bg-clip-text bg-gradient-to-br from-[#4776E6] to-[#8E54E9]">Dreams Into Reality</span>
+                </h1>
+                
+                <p class="text-gray-600 text-lg mb-8 max-w-lg mx-auto lg:mx-0">
+                    Master the skills you need, starting today. Our expert-led courses give you the confidence to build not just a job, but a successful career. The key to your future is in your hands.   
+                </p>
+                
+                <a href="#" class="inline-block bg-gradient-to-r from-[#4776E6] to-[#8E54E9] text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-purple-700 transition duration-300 transform hover:scale-105">
+                    See All Courses
+                </a>
+            </div>
+            
+            <div class="relative flex justify-center items-center mt-10 lg:mt-0">
+                
+                <img src="https://i.ibb.co/ZzzjyMCH/Whats-App-Image-2025-10-05-at-6-10-05-PM.jpg" alt="Online Course Mentor" class="relative z-10 max-w-sm md:max-w-md w-full rounded-tl-[40px] rounded-br-[40px] shadow-2xl">
+                
+                <div class="absolute z-20 top-0 left-5 md:left-20 animate-float-delay-1">
+                    <div class="bg-white p-3 rounded-xl shadow-lg flex items-center space-x-2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" class="h-8 w-8" alt="PHP">
+                        <span class="font-semibold text-sm hidden sm:block">PHP</span>
+                    </div>
+                </div>
+                
+                <div class="absolute z-20 top-10 right-0 md:right-10 animate-float">
+                    <div class="bg-white p-3 rounded-xl shadow-lg flex items-center space-x-2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" class="h-8 w-8 rounded" alt="JavaScript">
+                        <span class="font-semibold text-sm hidden sm:block">JavaScript</span>
+                    </div>
+                </div>
+                
+                <div class="absolute z-20  top-1/3 -left-4 md:left-0 animate-float-delay-2">
+                    <div class="bg-white p-3 rounded-xl shadow-lg flex items-center space-x-2">
+                        <img src="data:image/png;base64,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" class="h-8 w-8" alt="WordPress">
+                        <span class="font-semibold text-sm hidden sm:block">Java</span>
+                    </div>
+                </div>
+                
+                <div class="absolute z-20  top-1/2 -right-4 md:right-0 animate-float-delay-1">
+                    <div class="bg-white p-3 rounded-xl shadow-lg flex items-center space-x-2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" class="h-8 w-8" alt="Python">
+                        <span class="font-semibold text-sm hidden sm:block">Python</span>
+                    </div>
+                </div>
+
+                <div class="absolute z-20 bottom-10 -left-4 md:left-10 animate-float">
+                    <div class="bg-white p-3 rounded-xl shadow-lg flex items-center space-x-2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" class="h-8 w-8" alt="React">
+                        <span class="font-semibold text-sm hidden sm:block">React</span>
+                    </div>
+                </div>
+                
+                <div class="absolute z-20 bottom-0 right-5 md:right-20 animate-float-delay-2">
+                    <div class="bg-white p-3 rounded-xl shadow-lg flex items-center space-x-2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" class="h-8 w-8" alt="Laravel">
+                        <span class="font-semibold text-sm hidden sm:block">Laravel</span>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+     </section>
+    <!-- navbar and banner end here -->
 
     <!-- js link -->
     <script src="./assets/js/script.js"></script>
@@ -41,4 +182,4 @@
     </script>
 </body>
 
-</html>
+</html> 
