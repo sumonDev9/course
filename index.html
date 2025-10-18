@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Course</title>
     <!-- css link custom -->
-     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <!-- font-awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <!-- tailwind css link-->
@@ -13,13 +14,31 @@
     <!-- Roboto front family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <h1>This is Online Course</h1>
+    <!-- topbar, navbar and banner -->
+    <div
+        class="bg-gradient-to-r from-[#4776E6] to-[#8E54E9] text-white text-lg py-3 px-4   font-medium flex items-center justify-between">
+        <!-- Marquee Container -->
+        <div class="flex-1 overflow-hidden relative">
+            <marquee behavior="scroll" direction="left" scrollamount="6">
+                A warm welcome to the sndpbag4you family! Join us on a new journey of learning and growth.
+            </marquee>
+        </div>
+
+        <!-- Current date & weekday -->
+        <p id="currentDate" class="ml-4 whitespace-nowrap"></p>
+    </div>
 
 
     <!-- js link -->
-     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script>
+
+    </script>
 </body>
+
 </html>
