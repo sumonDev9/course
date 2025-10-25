@@ -20,7 +20,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body>
+<body class="bg-slate-50">
     <!-- topbar start here -->
     <div
         class="bg-gradient-to-r from-[#4776E6] to-[#8E54E9] text-white text-lg py-3 px-4   font-medium flex items-center justify-between">
@@ -37,8 +37,8 @@
     <!-- topbar end here -->
 
     <!-- navbar and banner start here -->
-     <section>
-        <nav x-data="{ open: false }" class="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-xl">
+     <section class="sticky top-0 z-50">
+        <nav x-data="{ open: false }" class=" w-full bg-white/70 backdrop-blur-xl">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
@@ -103,6 +103,11 @@
             </div>
         </div>
     </nav>
+     </section>
+     <!-- navbar end here -->
+      
+     <!--  banner start here  -->
+    <section>
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
@@ -173,7 +178,7 @@
         </div>
     </div>
      </section>
-    <!-- navbar and banner end here -->
+    <!-- banner end here -->
 
     <!-- Explore Our Top Courses start here -->
      <section class="py-10 w-11/12 mx-auto">
