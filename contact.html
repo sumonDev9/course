@@ -18,11 +18,90 @@
         rel="stylesheet">
     <!-- alpine js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+        <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F8F7FF; 
+        }
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem; 
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 1px solid #D1D5DB; 
+            border-radius: 0.5rem; 
+            background-color: #fff;
+            color: #374151; 
+            font-size: 1rem;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #6366F1; 
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25); 
+        }
+        
+        /* === লেবেলের ডিফল্ট পজিশন (নিচে) === */
+        .form-group label {
+            position: absolute;
+            left: 1.25rem;
+            top: 1rem;
+            color: #9CA3AF; 
+            font-size: 1rem;
+            pointer-events: none;
+            transition: all 0.2s ease-in-out;
+            background-color: transparent;
+            padding: 0 0.25rem;
+        }
+
+        /* === লেবেল উপরে ওঠার অ্যানিমেশন (Float Up) === */
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group textarea:focus + label,
+        .form-group textarea:not(:placeholder-shown) + label,
+        .form-group select:focus + label,
+        
+        /* --- ⭐️ এই লাইনটি ফিক্স করা হয়েছে ⭐️ --- */
+        .form-group select:valid + label { 
+        /* আগে ছিল: .form-group select:not([value=""]) + label 
+         এখন :valid ব্যবহার করা হয়েছে, যা বেশি নির্ভরযোগ্য।
+        */
+            top: -0.75rem;
+            left: 1rem;
+            font-size: 0.75rem; 
+            color: #6366F1; 
+            background-color: #fff; /* বর্ডার ঢাকার জন্য */
+            padding: 0 0.25rem;
+        }
+        
+        /* Hero Image Gradient Overlay */
+        .hero-image-overlay {
+            position: relative;
+            background-image: url('https://images.pexels.com/photos/3184431/pexels-photo-3184431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); 
+            background-size: cover;
+            background-position: center;
+            border-radius: 1rem; 
+        }
+        .hero-image-overlay::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom right, rgba(100, 70, 255, 0.7), rgba(120, 20, 255, 0.7)); 
+            border-radius: inherit;
+        }
+    </style>
 </head>
 
 <body class="bg-slate-50">
 
-        <!-- topbar start here -->
+    <!-- topbar start here -->
     <div
         class="bg-gradient-to-r from-[#4776E6] to-[#8E54E9] text-white text-lg py-3 px-4   font-medium flex items-center justify-between">
         <!-- Marquee Container -->
@@ -38,79 +117,309 @@
     <!-- topbar end here -->
 
     <!-- navbar and banner start here -->
-     <section class="sticky top-0 z-50">
+    <section class="sticky top-0 z-50">
         <nav x-data="{ open: false }" class=" w-full bg-white/70 backdrop-blur-xl">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <a href="#" class="text-2xl font-bold text-purple-700"><img src="/assets/image/home/logo.png" class="w-12 h-12" alt="logo"></a>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex-shrink-0">
+                        <a href="#" class="text-2xl font-bold text-purple-700"><img src="/assets/image/home/logo.png"
+                                class="w-12 h-12" alt="logo"></a>
+                    </div>
+
+                    <div class="hidden md:flex md:items-center md:space-x-8">
+                        <a href="/index.html" class="text-gray-700 hover:text-purple-700 font-medium">Home</a>
+                        <a href="/instructor.html"
+                            class="text-gray-700 hover:text-purple-700 font-medium">Instructor</a>
+                        <a href="/all-course.html" class="text-gray-700 hover:text-purple-700 font-medium">All
+                            Courses</a>
+                        <a href="/tutorial.html" class="text-gray-700 hover:text-purple-700 font-medium">Tutorial</a>
+                        <a href="/blog.html" class="text-gray-700 hover:text-purple-700 font-medium">Blog</a>
+                        <a href="/contact.html" class="text-gray-700 hover:text-purple-700 font-medium">Contact</a>
+                    </div>
+
+                    <div class="hidden md:block">
+                        <button
+                            class="inline-flex items-center justify-center w-full md:w-auto pl-8 py-1 cursor-pointer font-semibold text-[#000000] shadow-xl bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300">
+                            Login
+                            <div
+                                class="w-7 h-7 bg-gradient-to-r from-[#4776E6] to-[#8E54E9] flex justify-between items-center rounded-full ml-2">
+                                <svg class="w-8 h-8 text-white -rotate-45" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="md:hidden">
+                        <button @click="open = !open" class="text-gray-700 hover:text-purple-700 focus:outline-none">
+                            <span class="sr-only">Open main menu</span>
+                            <svg x-show="!open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                            </svg>
+                            <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display: none;">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                
-                <div class="hidden md:flex md:items-center md:space-x-8">
-                    <a href="/index.html" class="text-gray-700 hover:text-purple-700 font-medium">Home</a>
-                    <a href="/instructor.html" class="text-gray-700 hover:text-purple-700 font-medium">Instructor</a>
-                    <a href="/all-course.html" class="text-gray-700 hover:text-purple-700 font-medium">All Courses</a>
-                    <a href="/tutorial.html" class="text-gray-700 hover:text-purple-700 font-medium">Tutorial</a>
-                    <a href="/blog.html" class="text-gray-700 hover:text-purple-700 font-medium">Blog</a>
-                    <a href="/contact.html" class="text-gray-700 hover:text-purple-700 font-medium">Contact</a>
+            </div>
+
+            <div x-show="open" @click.outside="open = false" x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                x-transition:enter-end="opacity-100 transform translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 transform translate-y-0"
+                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                class="absolute w-full md:hidden bg-white/70 backdrop-blur-lg shadow-lg border-t border-gray-200/60"
+                style="display: none;">
+
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="/index.html"
+                        class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">Home</a>
+                    <a href="/instructor.html"
+                        class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">Instructor</a>
+                    <a href="/all-course.html"
+                        class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">All
+                        Courses</a>
+                    <a href="/tutorial.html"
+                        class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">Tutorial</a>
+                    <a href="/blog.html"
+                        class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">Blog</a>
+                    <a href="/contact.html"
+                        class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">Contact</a>
                 </div>
-                
-                <div class="hidden md:block">
-                      <button class="inline-flex items-center justify-center w-full md:w-auto pl-8 py-1 cursor-pointer font-semibold text-[#000000] shadow-xl bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300">
-                     Login
-                    <div class="w-7 h-7 bg-gradient-to-r from-[#4776E6] to-[#8E54E9] flex justify-between items-center rounded-full ml-2">
-                        <svg class="w-8 h-8 text-white -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
-                     </div>
-                    </button>
+                <div class="px-4 pb-4">
+                    <a href="#"
+                        class="block w-full text-center bg-purple-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-purple-700 transition duration-300">
+                        Login / Sign Up
+                    </a>
                 </div>
-                
-                <div class="md:hidden">
-                    <button @click="open = !open" class="text-gray-700 hover:text-purple-700 focus:outline-none">
-                        <span class="sr-only">Open main menu</span>
-                        <svg x-show="!open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+            </div>
+        </nav>
+    </section>
+    <!-- navbar end here -->
+
+    <!-- contact form start here -->
+
+    <section class="py-16">
+        <div class="container mx-auto max-w-7xl px-4">
+
+
+            <div class="text-center mb-16 relative">
+                <span
+                    class="inline-block bg-indigo-100 text-indigo-600 text-sm font-medium px-4 py-2 rounded-full mb-4">
+                    CONTACT US
+                </span>
+                <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#4776E6] to-[#8E54E9] mb-4">
+                    Have Questions? We're Here to Help!
+                </h1>
+                <p class="text-lg text-black max-w-3xl mx-auto">
+                    Whether you're curious about a course, need technical assistance, or just want to say hello, our
+                    team is ready to assist you.
+                </p>
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                            </path>
                         </svg>
-                        <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display: none;">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Call Our Team</h3>
+                    <p class="text-gray-600 mb-4">We're available for a quick chat.</p>
+                    <div class="flex items-center">
+                        <img src="https://flagcdn.com/w2560/in.png" alt="India Flag"
+                            class="w-6 h-4 mr-2 rounded shadow-sm">
+                        <a href="tel:+917980048890" class="text-transparent bg-clip-text bg-gradient-to-br from-[#4776E6] to-[#8E54E9] font-semibold hover:underline">+91 79800
+                            48890</a>
+                    </div>
+                </div>
+
+
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
                         </svg>
-                    </button>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Email Support</h3>
+                    <p class="text-gray-600 mb-4">Send us your queries anytime.</p>
+                    <a href="mailto:sndpbagg@gmail.com"
+                        class="text-transparent bg-clip-text bg-gradient-to-br from-[#4776E6] to-[#8E54E9] font-semibold hover:underline">sndpbagg@gmail.com</a>
+                </div>
+
+
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Our Location</h3>
+                    <p class="text-gray-600 mb-4">Visit us for a personal consultation.</p>
+                    <p class="text-transparent bg-clip-text bg-gradient-to-br from-[#4776E6] to-[#8E54E9] font-semibold">Dakshin Gouripur, Amtala,<br> Bishnupur, South 24 Pgs, WB,
+                        743503</p>
+                </div>
+            </div>
+
+
+            <div
+                class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center rounded-2xl overflow-hidden shadow-2xl">
+
+                <div
+                    class="hero-image-overlay relative min-h-[400px] lg:min-h-[600px] flex items-center justify-center p-8">
+
+                    <div class="relative z-10 text-white text-center">
+                        <h2 class="text-4xl font-bold mb-4">Ready to Start Your Learning Journey?</h2>
+                        <p class="text-lg text-indigo-100 max-w-sm mx-auto">
+                            Our dedicated team is always here to guide you. Reach out today!
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="bg-white p-8 md:p-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8">Send Us a Message</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder=" " required>
+                            <label for="name">Your Full Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder=" " required>
+                            <label for="email">Email Address</label>
+                        </div>
+                        <div class="form-group">
+                            <select id="subject" name="subject" class="appearance-none" required>
+                                <option value="" disabled selected hidden> </option>
+                                <option value="course-inquiry">Course Inquiry</option>
+                                <option value="technical-support">Technical Support</option>
+                                <option value="billing-question">Billing Question</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="subject">Select Subject</label>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-700">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 6.757 7.586 5.343 9z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" class="resize-none" placeholder=" " required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <div>
+                            <button type="submit"
+                                class="w-full bg-gradient-to-r from-[#4776E6] to-[#8E54E9] text-white font-bold px-6 py-4 rounded-lg shadow-lg hover:from-[#8E54E9] hover:to-[#4776E6] transition-colors duration-300 text-lg">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </section>
+    <!-- contact form end here -->
 
-        <div x-show="open" 
-             @click.outside="open = false" 
-             x-transition:enter="transition ease-out duration-200"
-             x-transition:enter-start="opacity-0 transform -translate-y-2"
-             x-transition:enter-end="opacity-100 transform translate-y-0"
-             x-transition:leave="transition ease-in duration-150"
-             x-transition:leave-start="opacity-100 transform translate-y-0"
-             x-transition:leave-end="opacity-0 transform -translate-y-2"
-             class="absolute w-full md:hidden bg-white/70 backdrop-blur-lg shadow-lg border-t border-gray-200/60"
-             style="display: none;">
-            
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="/index.html" class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">Home</a>
-                <a href="/instructor.html" class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">Instructor</a>
-                <a href="/all-course.html" class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">All Courses</a>
-                <a href="/tutorial.html" class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">Tutorial</a>
-                <a href="/blog.html" class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">Blog</a>
-                <a href="/contact.html" class="block text-gray-700 hover:bg-purple-50 hover:text-purple-700 px-3 py-2 rounded-md font-medium">Contact</a>
-            </div>
-            <div class="px-4 pb-4">
-                 <a href="#" class="block w-full text-center bg-purple-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-purple-700 transition duration-300">
-                    Login / Sign Up
+
+             <!-- footer start here-->
+    <footer class="bg-[#2a4d3a] text-gray-200" style="background-image: url('./assets/image/home/footerBg.png');">
+        <div class="container mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    
+            <div>
+                <a href="#" class="text-xl font-semibold mb-4 text-white">
+                    <img src="./assets/image/home/footer.png" class="w-14 h-14" alt="logo">
                 </a>
+                <p class="text-gray-300 mb-6 text-sm leading-relaxed">
+                    Recreate yourself, just like a new day slowly awakens with the first light of dawn.
+                    Each course will be a stepping stone on your journey forward —
+                    where your skills define you, and your confidence becomes your strength.Start your learning journey
+                    today,
+                    because your story of success begins right here.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-facebook-f text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-twitter text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-youtube text-lg"></i>
+                    </a>
+                </div>
             </div>
+    
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-white">Explore</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">Home</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">Instructor</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">All Course</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">Tutorial</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">Blog</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-white">Legal</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">Terms and Conditions</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">Support</a></li>
+                </ul>
+            </div>
+    
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-white">Our Location</h3>
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg h-48">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.8021037970443!2d88.29514667434634!3d22.35374574095793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02645729d93ac7%3A0x1e899fbcc4fffea!2sOrion%20Computer%20Education%20Council!5e1!3m2!1sen!2sin!4v1761073704150!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+    
         </div>
-    </nav>
-     </section>
-     <!-- navbar end here -->
-      
-    <h1>this is contact page</h1>
+    
+        <div class="border-t border-gray-400 py-4 text-center text-white text-sm">
+            &copy; Copyright 2025. All Rights Reserved. Design & Developed By <a href="#"
+                class="hover:text-white font-medium">Sumon Mitra</a>
+        </div>
+    </footer>
+    <!-- footer end here-->
 
-            <!-- js link -->
+    <!-- js link -->
     <script src="./assets/js/script.js"></script>
 </body>
 
-</html> 
+</html>
