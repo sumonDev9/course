@@ -3,285 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Details Page</title>
+    <title>Web Development Course Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family:Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+<body class="bg-white font-sans">
 
-    <style>
-        body {
-            font-family: "Hind Siliguri", sans-serif;
-        }
-        /* Accordion content-এর জন্য ডিফল্ট স্টাইল */
-        .accordion-content {
-            transition: all 0.4s ease-in-out;
-        }
-    </style>
-</head>
-<body class="bg-gray-50">
+    <div class="h-1.5 bg-gradient-to-r from-pink-300 via-purple-400 to-indigo-500"></div>
 
-    <div class="container mx-auto max-w-7xl p-4 lg:p-8">
-        
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+    <div class="container mx-auto max-w-7xl p-4 sm:p-6 lg:p-8">
 
-            <aside class="w-full lg:w-1/3 order-1 lg:order-2 space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+
+            <div class="lg:col-span-2">
                 
-                <div class="lg:sticky lg:top-8 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
-                    <img src="https://i.ibb.co/3k5fV38/course1.png" alt="Course Thumbnail" class="w-full h-56 object-cover">
-                    
-                    <div class="p-6 space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-3xl font-bold text-gray-900">৳ 750.00</span>
-                            <span class="text-xl font-medium text-gray-500 line-through">৳ 1,499.00</span>
-                        </div>
-                        
-                        <a href="#" class="w-full flex justify-center items-center py-3 bg-purple-600 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-purple-700 transition">
-                            Enroll Now
-                        </a>
-                        
-                        <div class="pt-4 border-t border-gray-100">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-3">This Course Includes</h3>
-                            <ul class="space-y-3 text-gray-600">
-                                <li class="flex items-center gap-3">
-                                    <svg class="w-5 h-5 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A1.5 1.5 0 0 1 18 21.75H6a1.5 1.5 0 0 1-1.499-1.632Z" /></svg>
-                                    <span><strong>Lesson:</strong> 120</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <svg class="w-5 h-5 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h12A2.25 2.25 0 0 0 20.25 14.25V3M3.75 3H13.5m0 0v11.25A2.25 2.25 0 0 1 11.25 16.5H6A2.25 2.25 0 0 1 3.75 14.25V3" /></svg>
-                                    <span><strong>Skill Level:</strong> Advance</span>
-                                </li>
-                                 <li class="flex items-center gap-3">
-                                    <svg class="w-5 h-5 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C13.18 6.061 14.088 6.5 15 6.5c2.306 0 4.236-.98 4.236-2.25S17.306 2 15 2c-2.306 0-4.236.98-4.236 2.25m-1.114 4.043A48.27 48.27 0 0 0 9 10.5c-2.306 0-4.236-.98-4.236-2.25s1.93-2.25 4.236-2.25M9 10.5V12m3.334-3.636c1.12 0 2.233.038 3.334.114m-3.334-1.242c1.12 0 2.233.038 3.334.114M9 10.5V12m0 0H6m3 0v3m0 0v3m0-3h3m-3 0h-3m-3.334-1.14a48.45 48.45 0 0 1-1.076 3.051m1.076-3.051a48.45 48.45 0 0 0-1.076 3.051m0 0a48.45 48.45 0 0 0 1.076-3.051M12 15v3m0 0v3m0-3h3m-3 0h-3" /></svg>
-                                    <span><strong>Language:</strong> Bengali</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <svg class="w-5 h-5 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.504-1.125-1.125-1.125h-6.75c-.621 0-1.125.504-1.125 1.125V18.75M9 11.25h6M12 15V3.75m0 0a3 3 0 0 0-3-3H9a3 3 0 0 0-3 3v.75M12 3.75a3 3 0 0 1 3 3v.75" /></svg>
-                                    <span><strong>Certificate:</strong> After Completed</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <svg class="w-5 h-5 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
-                                    <span><strong>Access:</strong> Lifetime</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div class="flex items-center justify-center gap-4 pt-4 border-t border-gray-100">
-                            <span class="text-sm font-medium text-gray-700">Share:</span>
-                            <a href="#" class="text-blue-600 hover:opacity-75"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
-                            <a href="#" class="text-green-500 hover:opacity-75"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 12c0 5.55 4.45 10 10 10 5.55 0 10-4.45 10-10c0-5.55-4.45-10-10-10zm0 18.1c-4.49 0-8.1-3.61-8.1-8.1c0-4.49 3.61-8.1 8.1-8.1s8.1 3.61 8.1 8.1c0 4.49-3.61 8.1-8.1 8.1zm3.62-5.78c-.18 0-.36-.07-.5-.21l-3.12-3.12c-.28-.28-.28-.72 0-1l3.12-3.12c.28-.28.72-.28 1 0s.28.72 0 1L12.92 12l2.22 2.22c.28.28.28.72 0 1s-.28.21-.5.21z"/></svg></a>
-                            <a href="#" class="text-blue-400 hover:opacity-75"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.67c.88-.53 1.56-1.37 1.88-2.38c-.83.49-1.75.85-2.72 1.04C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.27c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94c0 1.48.75 2.79 1.9 3.56c-.7-.02-1.36-.21-1.94-.53v.05c0 2.07 1.47 3.8 3.42 4.19c-.36.1-.74.15-1.13.15c-.27 0-.54-.03-.8-.08c.54 1.7 2.12 2.93 4 2.96c-1.46 1.14-3.3 1.82-5.3 1.82c-.34 0-.68-.02-1.02-.06C3.44 19.88 5.6 20.5 8 20.5c7.2 0 11.14-5.96 11.14-11.14c0-.17 0-.34-.01-.51c.77-.55 1.43-1.24 1.97-2.02z"/></svg></a>
-                            <a href="#" class="text-pink-600 hover:opacity-75"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.7 2 8.22 2.03 7.15 2.09c-1.07.06-1.8.37-2.47.64c-.67.27-1.22.63-1.77 1.18c-.55.55-.91 1.1-1.18 1.77c-.27.67-.58 1.4-.64 2.47C2.03 8.22 2 8.7 2 12c0 3.3 0 3.78.06 4.85c.06 1.07.37 1.8.64 2.47c.27.67.63 1.22 1.18 1.77c.55.55 1.1.91 1.77 1.18c.67.27 1.4.58 2.47.64C8.22 21.97 8.7 22 12 22c3.3 0 3.78 0 4.85-.06c1.07-.06 1.8-.37 2.47-.64c.67-.27 1.22-.63 1.77-1.18c.55-.55.91 1.1 1.18-1.77c.27-.67.58-1.4.64-2.47C21.97 15.78 22 15.3 22 12c0-3.3 0-3.78-.06-4.85c-.06-1.07-.37-1.8-.64-2.47c-.27-.67-.63-1.22-1.18-1.77c-.55-.55-1.1-.91-1.77-1.18c-.67-.27-1.4-.58-2.47-.64C15.78 2.03 15.3 2 12 2zm0 1.8c3.23 0 3.65.01 4.93.07c.96.04 1.5.25 1.85.39c.45.18.78.39 1.13.74c.35.35.56.68.74 1.13c.14.35.35.89.39 1.85c.06 1.28.07 1.7.07 4.93s-.01 3.65-.07 4.93c-.04.96-.25 1.5-.39 1.85c-.18.45-.39.78-.74 1.13c-.35.35-.68.56-1.13.74c-.35.14-.89.35-1.85.39c-1.28.06-1.7.07-4.93.07s-3.65-.01-4.93-.07c-.96-.04-1.5-.25-1.85-.39c-.45-.18-.78-.39-1.13-.74c-.35-.35-.56-.68-.74-1.13c-.14-.35-.35-.89-.39-1.85c-.06-1.28-.07-1.7-.07-4.93s.01-3.65.07-4.93c.04-.96.25-1.5.39-1.85c.18-.45.39-.78.74-1.13c.35-.35.68.56 1.13-.74c.35-.14.89.35 1.85.39c1.28-.06 1.7-.07 4.93-.07zM12 7.25c-2.62 0-4.75 2.13-4.75 4.75S9.38 16.75 12 16.75s4.75-2.13 4.75-4.75S14.62 7.25 12 7.25zm0 7.7c-1.63 0-2.95-1.32-2.95-2.95s1.32-2.95 2.95-2.95s2.95 1.32 2.95 2.95s-1.32 2.95-2.95 2.95zM16.92 6.18c-.62 0-1.12.5-1.12 1.12s.5 1.12 1.12 1.12s1.12-.5 1.12-1.12s-.5-1.12-1.12-1.12z"/></svg></a>
-                        </div>
-                    </div>
+                <div class="overflow-hidden rounded-xl shadow-lg">
+                    <img class="w-full object-cover" src="https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg" alt="Students learning web development">
                 </div>
 
-                <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Explore Our Best Courses</h3>
-                    <div class="space-y-4">
-                        <a href="#" class="flex items-center gap-4 group">
-                            <img src="https://i.ibb.co/nL7P9Yx/php.png" alt="Advanced PHP" class="w-16 h-16 rounded-lg object-cover flex-shrink-0">
-                            <div>
-                                <h4 class="font-semibold text-gray-800 group-hover:text-purple-600 transition">Advanced PHP</h4>
-                                <span class="text-sm text-gray-500">৳ 1200.00</span>
-                            </div>
-                        </a>
-                        <a href="#" class="flex items-center gap-4 group">
-                            <img src="https://i.ibb.co/2Z5BqHm/c.png" alt="C Programming" class="w-16 h-16 rounded-lg object-cover flex-shrink-0">
-                            <div>
-                                <h4 class="font-semibold text-gray-800 group-hover:text-purple-600 transition">C Programming</h4>
-                                <span class="text-sm text-gray-500">৳ 1100.00</span>
-                            </div>
-                        </a>
-                        <a href="#" class="flex items-center gap-4 group">
-                            <img src="https://i.ibb.co/JqjJqY1/ps.png" alt="Photoshop CC" class="w-16 h-16 rounded-lg object-cover flex-shrink-0">
-                            <div>
-                                <h4 class="font-semibold text-gray-800 group-hover:text-purple-600 transition">Photoshop CC</h4>
-                                <span class="text-sm text-gray-500">৳ 850.00</span>
-                            </div>
-                        </a>
-                        <a href="#" class="flex items-center gap-4 group">
-                            <img src="https://i.ibb.co/3SN1Y08/react.png" alt="React Course" class="w-16 h-16 rounded-lg object-cover flex-shrink-0">
-                            <div>
-                                <h4 class="font-semibold text-gray-800 group-hover:text-purple-600 transition">React Course</h4>
-                                <span class="text-sm text-gray-500">৳ 2500.00</span>
-                            </div>
-                        </a>
+                <div class="flex items-center mt-6">
+                    <div class="flex items-center text-yellow-400">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                     </div>
+                    <span class="ml-2 text-gray-600 font-medium">(5.0)</span>
                 </div>
-            </aside>
-            
-            <main class="w-full lg:w-2/3 order-2 lg:order-1 flex flex-col gap-6">
-                
-                <nav class="text-sm text-gray-500">
-                    <a href="#" class="hover:text-purple-600">Home</a> &gt;
-                    <a href="#" class="hover:text-purple-600">Courses</a> &gt;
-                    <span class="text-gray-800">WordPress Customization</span>
-                </nav>
 
-                <h1 class="text-3xl lg:text-4xl font-bold text-gray-900">
-                    WordPress Customization with WooCommerce
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
+                    Web Development Fully Complete Guideline
                 </h1>
-                
-                <div class="flex items-center gap-3">
-                    <img src="https://i.ibb.co/YhC0kMh/avatar.png" alt="Ali Hossain" class="w-10 h-10 rounded-full object-cover">
-                    <div>
-                        <span class="font-semibold text-gray-800">By Ali Hossain</span>
-                        <div class="text-sm text-gray-500 flex items-center gap-2">
-                            <span>★★★★★ 5.00</span>
-                            <span>(21 Reviews)</span>
-                        </div>
-                    </div>
+
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-gray-600 mt-4">
+                    <span class="flex items-center gap-1.5">
+                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+                        Lesson 10
+                    </span>
+                    <span class="flex items-center gap-1.5">
+                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        9.00AM - 11.00 PM
+                    </span>
+                    <span class="flex items-center gap-1.5">
+                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM12 12.75c-1.84 0-3.413.636-4.666 1.683a6.375 6.375 0 0011.964-3.07c-.378-1.017-.99-1.92-1.734-2.6C15.413 13.386 13.84 12.75 12 12.75z" /></svg>
+                        Students 30+
+                    </span>
                 </div>
 
-                <div id="video-player" class="w-full aspect-video bg-black rounded-lg shadow-lg flex items-center justify-center">
-                    <span class="text-white text-2xl font-semibold">Video Player Placeholder</span>
-                </div>
+                <hr class="border-t border-gray-200 my-6">
 
-                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-2">
-                    <div class="flex border-b border-gray-200">
-                        <button class="flex-1 py-3 px-4 text-center font-semibold text-purple-600 border-b-2 border-purple-600">
-                            Description
+                <div>
+                    <div class="flex flex-wrap gap-2 sm:gap-4 border-b border-gray-200 pb-3">
+                        <button class="px-3 sm:px-4 py-2 font-semibold text-sm sm:text-base text-violet-600 border-b-2 border-violet-600">
+                            Overview
                         </button>
-                         <button class="flex-1 py-3 px-4 text-center font-medium text-gray-500 hover:text-purple-600 hover:border-b-2 hover:border-purple-300 transition">
+                        <button class="px-3 sm:px-4 py-2 font-semibold text-sm sm:text-base text-gray-500 hover:text-gray-800">
+                            Curriculum
+                        </button>
+                        <button class="px-3 sm:px-4 py-2 font-semibold text-sm sm:text-base text-gray-500 hover:text-gray-800">
+                            Instructor
+                        </button>
+                        <button class="px-3 sm:px-4 py-2 font-semibold text-sm sm:text-base text-gray-500 hover:text-gray-800">
                             Reviews
                         </button>
                     </div>
-                    
-                    <article class="p-6 space-y-4 text-gray-700 leading-relaxed">
-                        <h2 class="text-xl font-semibold text-gray-800 mb-2">About Course</h2>
-                        <p>
-                            আমাদের এই অ্যাডভান্সড ওয়ার্ডপ্রেস কাস্টমাইজেশন কোর্সে আপনাকে স্বাগতম। আপনি যদি ওয়ার্ডপ্রেস দিয়ে যেকোনো ধরনের ওয়েবসাইট কাস্টমাইজেশন করতে চান, তাহলে এই কোর্সটি আপনার জন্য।
-                        </p>
-                        <p>
-                            এই কোর্সে, আমরা এলিমেন্টর এবং বিভিন্ন জনপ্রিয় প্লাগইন ব্যবহার করে কীভাবে প্রফেশনাল ওয়েবসাইট তৈরি করা যায় তা ধাপে ধাপে শিখব।
-                        </p>
-                    </article>
+
+                    <div class="mt-6 space-y-6">
+                        <div>
+                            <h2 class="text-xl font-semibold text-gray-800">COURSE DESCRIPTION</h2>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                            </p>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-semibold text-gray-800">WHAT WILL I LEARN FROM THIS COURSE?</h2>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-6">
-                    <h2 class="text-xl font-semibold text-gray-800 mb-4">What you will learn</h2>
-                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
-                        <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                            <span class="text-gray-700">যেকোনো থিম কাস্টমাইজেশন</span>
+
+            </div>
+            <div class="lg:col-span-1 h-fit lg:sticky lg:top-8">
+                <div class="bg-violet-50/50 border border-violet-100 rounded-2xl shadow-lg p-5">
+                    
+                    <div class="overflow-hidden rounded-lg">
+                        <img class="w-full h-56 object-cover" src="https://images.pexels.com/photos/3184423/pexels-photo-3184423.jpeg" alt="Course preview">
+                    </div>
+
+                    <div class="flex justify-between items-baseline mt-5">
+                        <span class="text-lg font-medium text-gray-700">Course Fee</span>
+                        <span class="text-3xl font-bold text-violet-700">160$</span>
+                    </div>
+                    <p class="text-sm text-gray-500 text-right mt-1">25-Day Money-Back Guarantee</p>
+
+                    <button class="w-full bg-violet-600 text-white font-semibold py-3 rounded-lg shadow-md hover:bg-violet-700 transition-colors duration-300 mt-4">
+                        BUY NOW
+                    </button>
+
+                    <ul class="space-y-4 mt-6 pt-4 border-t border-violet-200">
+                        <li class="flex justify-between items-center text-sm">
+                            <span class="text-gray-600">Start Date</span>
+                            <span class="font-semibold text-gray-800">4:00 Hr 8:00 PM</span>
                         </li>
-                        <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                            <span class="text-gray-700">Figma to WordPress কনভার্সন</span>
+                        <li class="flex justify-between items-center text-sm">
+                            <span class="text-gray-600">Enrolled</span>
+                            <span class="font-semibold text-gray-800">1100</span>
                         </li>
-                        <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                            <span class="text-gray-700">WooCommerce দিয়ে ই-কমার্স সাইট</span>
+                        <li class="flex justify-between items-center text-sm">
+                            <span class="text-gray-600">Lectures</span>
+                            <span class="font-semibold text-gray-800">10</span>
                         </li>
-                         <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                            <span class="text-gray-700">এলিমেন্টর পেজ বিল্ডার</span>
+                        <li class="flex justify-between items-center text-sm">
+                            <span class="text-gray-600">Skill Level</span>
+                            <span class="font-semibold text-gray-800">Basic</span>
+                        </li>
+                        <li class="flex justify-between items-center text-sm">
+                            <span class="text-gray-600">Class Name Day</span>
+                            <span class="font-semibold text-gray-800">Monday-Friday</span>
+                        </li>
+                        <li class="flex justify-between items-center text-sm">
+                            <span class="text-gray-600">Language</span>
+                            <span class="font-semibold text-gray-800">English</span>
                         </li>
                     </ul>
+
                 </div>
-
-
-                <section id="course-content-section" class="bg-white rounded-lg shadow-md border border-gray-200">
-                    <div class="p-6 border-b border-gray-200">
-                        <h2 class="text-xl font-semibold text-gray-800">Course Content</h2>
-                        <p class="text-sm text-gray-500 mt-1">12 Modules • 120 Lessons • 25h 30m Total</p>
-                    </div>
-
-                    <div class="divide-y divide-gray-200">
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-toggle w-full flex justify-between items-center text-left py-4 px-6 hover:bg-gray-50 transition">
-                                <span class="font-semibold text-gray-800">Module 01: Introduction</span>
-                                <svg class="icon-toggle w-5 h-5 text-gray-500 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
-                            </button>
-                            <div class="accordion-content max-h-0 overflow-hidden">
-                                <ul class="divide-y divide-gray-100 p-6 pt-0">
-                                    <li class="py-3 flex justify-between items-center text-gray-600"><span>1.1 Welcome to the Course</span> <span>02:30</span></li>
-                                    <li class="py-3 flex justify-between items-center text-gray-600"><span>1.2 What is WordPress?</span> <span>05:15</span></li>
-                                    <li class="py-3 flex justify-between items-center text-gray-600"><span>1.3 Local Server Setup (XAMPP)</span> <span>10:00</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-toggle w-full flex justify-between items-center text-left py-4 px-6 hover:bg-gray-50 transition">
-                                <span class="font-semibold text-gray-800">Module 02: WordPress Dashboard</span>
-                                <svg class="icon-toggle w-5 h-5 text-gray-500 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
-                            </button>
-                            <div class="accordion-content max-h-0 overflow-hidden">
-                                <ul class="divide-y divide-gray-100 p-6 pt-0">
-                                    <li class="py-3 flex justify-between items-center text-gray-600"><span>2.1 Dashboard Overview</span> <span>08:00</span></li>
-                                    <li class="py-3 flex justify-between items-center text-gray-600"><span>2.2 Posts vs Pages</span> <span>12:30</span></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-toggle w-full flex justify-between items-center text-left py-4 px-6 hover:bg-gray-50 transition">
-                                <span class="font-semibold text-gray-800">Module 03: Elementor Page Builder</span>
-                                <svg class="icon-toggle w-5 h-5 text-gray-500 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
-                            </button>
-                            <div class="accordion-content max-h-0 overflow-hidden">
-                                <ul class="divide-y divide-gray-100 p-6 pt-0">
-                                    <li class="py-3 flex justify-between items-center text-gray-600"><span>3.1 Installing Elementor</span> <span>05:00</span></li>
-                                    <li class="py-3 flex justify-between items-center text-gray-600"><span>3.2 Basic Widgets</span> <span>15:00</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        </div>
-                </section>
-
-                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-6 flex flex-col md:flex-row items-center gap-6">
-                    <img src="https://i.ibb.co/F8C03zQ/certificate.png" alt="Certificate" class="w-48 h-auto">
-                    <div>
-                        <h2 class="text-xl font-semibold text-gray-800 mb-2">Earn a Certificate</h2>
-                        <p class="text-gray-700">
-                            কোর্সটি সফলভাবে সম্পন্ন করার পর আপনি একটি ভেরিফায়েড সার্টিফিকেট পাবেন, যা আপনি আপনার CV বা LinkedIn প্রোফাইলে যোগ করতে পারবেন।
-                        </p>
-                    </div>
-                </div>
-
-            </main>
-            
-        </div>
+            </div>
+            </div>
     </div>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // --- Accordion Logic ---
-            const accordions = document.querySelectorAll('.accordion-item');
-
-            accordions.forEach(item => {
-                const toggle = item.querySelector('.accordion-toggle');
-                const content = item.querySelector('.accordion-content');
-                const icon = toggle.querySelector('.icon-toggle');
-
-                toggle.addEventListener('click', () => {
-                    // Check if this accordion is already open
-                    const isOpen = content.classList.contains('max-h-[1000px]');
-
-                    if (isOpen) {
-                        // Close this one
-                        content.classList.remove('max-h-[1000px]');
-                        content.classList.remove('p-6'); // Padding সরান
-                        icon.classList.remove('rotate-180');
-                    } else {
-                        // Open this one
-                        content.classList.add('max-h-[1000px]'); // একটি বড় মান
-                        content.classList.add('p-6'); // Padding যোগ করুন
-                        icon.classList.add('rotate-180');
-                    }
-                });
-            });
-
-            // --- Sticky Header Logic (REMOVED) ---
-
-        });
-    </script>
 
 </body>
 </html>
